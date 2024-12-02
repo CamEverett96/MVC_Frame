@@ -4,7 +4,10 @@ use Core\DBConnection;
 require '../core/helpers.php';
 require '../vendor/autoload.php';
 require '../app/routes.php';
-
+if (file_exists(__DIR__ . '/../' . '.env')){
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load(__DIR__);
+}
  
 
 // $EmailModel = new EmailModel(DBConnection::start());
